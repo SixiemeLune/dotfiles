@@ -40,4 +40,5 @@ return require('packer').startup(function(use)
 	  "neovim/nvim-lspconfig",
   }
   use "unblevable/quick-scope"
+  use "nvim-treesitter/nvim-treesitter-context"
 end)
