@@ -42,7 +42,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+a kill
@@ -183,19 +183,21 @@ bindsym $mod+r mode "resize"
 # }
 
 # USE POLYBAR
-exec /usr/bin/polybaraa
+exec /usr/bin/polybar
 default_border none
 
 default_floating_border none
 exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
 
-gaps inner 3
-gaps outer 1
+gaps inner 6
+gaps outer 3
 
-# WALLPAPER
-exec feh --bg-fill ~/wallpapers/2024_12_27_134_Kleki.png
 
-# use nitrogen if prefered
+# WALLPAPER 
+# ~/wallpapers/2024_12_27_134_Kleki
+exec feh --bg-fill ~/wallpapers/purple-tree.png 
+
+# Use nitrogen if preferred
 # exec --no-startup-id nitrogen --restore
 
 
