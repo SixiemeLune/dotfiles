@@ -1,15 +1,14 @@
 alias psexec.py="impacket-psexec"
-alias sherlock="python3 $HOME/soft/sherlock/sherlock/sherlock.py"
-alias maigret="$HOME/soft/maigret/maigret.py"
+
+# jokes on you nano users
 alias nano='vim'
-alias wordlistctl="python3 $HOME/soft/wordlistctl/wordlistctl.py" 
 alias vim='nvim' 
 
 function mknote(){
   mkdir nmap gobuster loot logs exploits ssh-keys post-exploits
   touch notes.md
   filename=$(basename `pwd`)
-  echo "# $filename\n\n\n# Enumeration\n\n\n# Service Discovery\n\n\n# Exploit\n\n\n# Persistence\n\n\n# Lateral Movement\n\n\n# Privilege Escalation" > notes.md
+  echo "# $filename\n\n\n# Recon \n\n## Nmap\n\n## Subdomains\n\n## Website ?\n\n\n# Exploit\n\n\n# Persistence\n\n\n# Lateral Movement\n\n\n# Privilege Escalation" > notes.md
 }
 
 
