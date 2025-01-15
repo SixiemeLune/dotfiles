@@ -5,7 +5,7 @@ alias nano='vim'
 alias vim='nvim' 
 
 function mknote(){
-  mkdir nmap gobuster loot logs exploits ssh-keys post-exploits
+  mkdir nmap fuzz loot logs exploits ssh-keys post-exploits
   touch notes.md
   filename=$(basename `pwd`)
   echo "# $filename\n\n\n# Recon \n\n## Nmap\n\n## Subdomains\n\n## Website ?\n\n\n# Exploit\n\n\n# Persistence\n\n\n# Lateral Movement\n\n\n# Privilege Escalation" > notes.md
