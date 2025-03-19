@@ -6,7 +6,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:HackNerdFont 9
+font pango:MesloLGS NF 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -181,21 +181,24 @@ bindsym $mod+r mode "resize"
 # bar {
 #         status_command i3status
 # }
+bar {
+        status_command i3status
+}
 
+#Lock screen 
+bindsym Mod4+l exec --no-startup-id i3lock -i /home/s.junck/farces/default_windows.png -t -p win
 # USE POLYBAR
-exec /usr/bin/polybar
-default_border none
+# exec /usr/bin/polybar
+# default_border none
 
-default_floating_border none
-exec --no-startup-id picom -b --config ~/.config/picom/picom.conf
+# default_floating_border none
+exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 
-gaps inner 6
-gaps outer 3
 
 
 # WALLPAPER 
 # ~/wallpapers/2024_12_27_134_Kleki
-exec feh --bg-fill ~/wallpapers/purple-tree.png 
+exec_always --no-startup-id feh --bg-fill --randomize /home/s.junck/wallpapers/*
 
 # Use nitrogen if preferred
 # exec --no-startup-id nitrogen --restore
@@ -217,3 +220,5 @@ mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
 }
 
 bindsym $mod+x mode "exit: [l]ogout, [r]eboot, [s]hutdown"
+# Moving workspaces between screens 
+bindsym $mod+p move workspace to output right

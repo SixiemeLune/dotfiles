@@ -28,6 +28,3 @@ fi
 
 # Switch CAPS LOCK and Escape
 setxkbmap -option caps:swapescape
-
-# Start Picom for transparency 
-picom -b
