@@ -2,12 +2,29 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
 	-- Replace the language servers listed here 
 	-- with the ones you want to install
-	ensure_installed = {'lua_ls', 'pyright'},
-	handlers = {
-		function(server_name)
-			require('lspconfig')[server_name].setup({})
-		end,
-	},
+	ensure_installed = {'lua_ls', 'bashls'},
+
+    -- The first entry (without a key) will be the default handler
+    -- and will be called for each installed server that doesn't have
+    -- a dedicated handler.
+    handlers = {
+        function(server_name)
+            require('lspconfig')[server_name].setup({})
+        end,
+        -- Next, you can provide targeted overrides for specific servers.
+        ["pyright"] = function ()
+            local lspconfig = require("lspconfig")
+            lspconfig.pyright.setup {
+                settings = {
+                    python = {
+                        analysis = {
+                            include = {"/home/s.junck/SheepDip/sheepdip_os/rpm/sheepdip_api"},
+                        },
+                    },
+                },
+            }
+        end,
+    },
 })
 
 local cmp = require('cmp')
